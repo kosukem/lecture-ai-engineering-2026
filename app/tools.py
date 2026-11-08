@@ -81,7 +81,7 @@ def get_lecture_summary(lecture: int) -> str:
 
 
 def make_quiz(lecture: int) -> str:
-    """指定した回の用語から 1つを選び、
+    """指定した回の用語から 2つを選び、
     確認問題と答えを返す。
     「第2回の確認問題を出して」のように、
     復習用の問題を求められたときに使う。
