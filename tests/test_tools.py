@@ -46,3 +46,10 @@ def test_default_question_of_lecture1_is_answerable_from_glossary():
     assert "3レベル" in DEFAULT_QUESTION
     hits = json.loads(tools.search_glossary("3レベル"))
     assert hits[0]["term"] == "宿題の3レベル"
+
+
+def test_make_quiz_returns_question_and_answer_for_lecture():
+    payload = json.loads(tools.make_quiz(2))
+    assert set(payload) == {"question", "answer"}
+    assert payload["question"].endswith("意味は？")
+    assert payload["answer"]
